@@ -1,7 +1,7 @@
 import "./App.css";
-import { FeedbackForm } from "../modules/feedback/feedbackform";
-import { FeedbackList } from "../modules/feedback/feedbacklist";
-import { SortControls } from "../modules/feedback/sortcontrols";
+import { FeedbackForm } from "../modules/feedback/components/feedbackform";
+import { FeedbackList } from "../modules/feedback/components/feedbacklist";
+import { SortControls } from "../modules/feedback/components/sortcontrols";
 
 
 function App() {

@@ -1,9 +1,10 @@
-import { type Feedback, useFeedbackStore } from "../../hooks/useFeedbackState";
+import { type Feedback, useFeedbackStore } from "../store/feedbackStore";
 
 interface Props {
   feedback: Feedback;
+  onEdit: () => void;
 }
-export const FeedbackItem = ({ feedback }: Props) => {
+export const FeedbackItem = ({ feedback, onEdit }: Props) => {
   const { deleteFeedback, likeFeedback, dislikeFeedback } = useFeedbackStore();
 
   return (
@@ -20,6 +21,12 @@ export const FeedbackItem = ({ feedback }: Props) => {
 
       {/* Кнопки справа */}
       <div className="flex flex-col justify-center items-end gap-2 min-w-[100px]">
+        <button
+          onClick={onEdit}
+          className="text-blue-600 hover:underline text-sm"
+        >
+          ✏️ Edit
+        </button>
         <button
           className="text-green-500 hover:underline text-sm"
           onClick={() => likeFeedback(feedback.id)}

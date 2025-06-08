@@ -1,4 +1,4 @@
-import { useFeedbackStore } from "../../hooks/useFeedbackState";
+import { useFeedbackStore } from "../store/feedbackStore";
 
 export const SortControls = () => {
   const sortBy = useFeedbackStore((s) => s.sortBy);

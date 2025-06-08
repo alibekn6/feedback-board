@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { useFeedbackStore } from '../../hooks/useFeedbackState'
+import { useFeedbackStore } from '../store/feedbackStore'
 
 
 export const FeedbackForm = () => {

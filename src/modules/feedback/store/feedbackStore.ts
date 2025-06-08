@@ -20,6 +20,8 @@ interface FeedbackStore {
   deleteFeedback: (id: string) => void;
   likeFeedback: (id: string) => void;
   dislikeFeedback: (id: string) => void;
+  editFeedback: (id: string, newText: string) => void;
+
 }
 
 export const useFeedbackStore = create<FeedbackStore>((set) => ({
@@ -59,4 +61,11 @@ export const useFeedbackStore = create<FeedbackStore>((set) => ({
         fb.id === id ? { ...fb, dislikes: fb.dislikes + 1 } : fb
       ),
     })),
+  editFeedback: (id, newText) => {
+    set((state) => ({
+        feedbacks: state.feedbacks.map((fb) =>
+            fb.id === id ? { ...fb, text: newText } : fb
+        ),
+    }));
+  }
 }));
