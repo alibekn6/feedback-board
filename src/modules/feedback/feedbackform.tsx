@@ -1,16 +1,15 @@
 import { useState, type FormEvent } from "react";
+import { useFeedbackStore } from '../../hooks/useFeedbackState'
 
-type Props = {
-  onAdd: (text: string) => void;
-};
 
-export const FeedbackForm = ({ onAdd }: Props) => {
+export const FeedbackForm = () => {
   const [text, setText] = useState("");
+  const addFeedback = useFeedbackStore((s) => s.addFeedback)
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (text.trim()) {
-      onAdd(text.trim());
+      addFeedback(text.trim());
       setText("");
     }
   };
